@@ -1,6 +1,6 @@
 {
   "name": "@serverless-devs/s-framework",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Serverless Devs Tool Framework Component For Alibaba Cloud",
   "keywords": ["Serverless", "Framework", "Serverless-Devs", "Serverless-Tool"],
   "homepage": "https://www.serverlessfans.com",

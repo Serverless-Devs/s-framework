@@ -36,6 +36,7 @@ interface PropertiesConfig {
 }
 
 interface InputsContext {
+  Args: any;
   Bootstrap: any
   Project: ProjectConfig
   Credentials: CredentialsConfig
@@ -94,6 +95,7 @@ class Framework extends Component {
     await this.handlerStartConfig(Function.CodeUri, inputs.Bootstrap.Content, inputs.Bootstrap.IsConfig);
 
     const state = await fc.deploy({
+      Args: inputs.Args,
       State: fc.state,
       Credentials,
       Project,
@@ -103,6 +105,8 @@ class Framework extends Component {
         Service
       }
     });
+
+    
 
     let autoDomain: any;
     let outputDomains: any = [];
@@ -180,7 +184,7 @@ class Framework extends Component {
     // 不是文件，则进行Bootstrap的添加
     const bootstrapPath = path.resolve(`${codeUri}/bootstrap`);
     // 如果bootstrap已经存在，并且startConfig不存在，则不进行操作
-    if (await fse.pathExists(bootstrapPath) && !isConfig) {
+    if ((await fse.pathExists(bootstrapPath)) && !isConfig) {
       return;
     }
     // 将bootstrap写入到项目
