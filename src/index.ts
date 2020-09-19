@@ -92,7 +92,9 @@ class Framework extends Component {
     Function.CodeUri = inputs.Properties.CodeUri || './';
 
     console.log('Bootstrap processing ...');
-    await this.handlerStartConfig(Function.CodeUri, inputs.Bootstrap.Content, inputs.Bootstrap.IsConfig);
+    if(!(inputs.Bootstrap.NoBootstrap && inputs.Bootstrap.NoBootstrap === true)){
+      await this.handlerStartConfig(Function.CodeUri, inputs.Bootstrap.Content, inputs.Bootstrap.IsConfig);
+    }
 
     const state = await fc.deploy({
       Args: inputs.Args,
