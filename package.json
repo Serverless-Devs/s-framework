@@ -1,11 +1,19 @@
 {
   "name": "@serverless-devs/s-framework",
-  "version": "0.0.15",
+  "version": "0.0.17",
   "description": "Serverless Devs Tool Framework Component For Alibaba Cloud",
-  "keywords": ["Serverless", "Framework", "Serverless-Devs", "Serverless-Tool"],
+  "keywords": [
+    "Serverless",
+    "Framework",
+    "Serverless-Devs",
+    "Serverless-Tool"
+  ],
   "homepage": "https://www.serverlessfans.com",
   "author": "Serverless-Devs",
-  "contributors": ["Shoushuai Wang", "Anycodes"],
+  "contributors": [
+    "Shoushuai Wang",
+    "Anycodes"
+  ],
   "license": "MIT",
   "main": "./lib/index.js",
   "publishConfig": {
@@ -21,7 +29,7 @@
     "release-ignore": "npm publish"
   },
   "dependencies": {
-    "@serverless-devs/s-core": "0.0.3",
+    "@serverless-devs/s-core": "0.0.8",
     "fs-extra": "^9.0.1"
   },
   "devDependencies": {
