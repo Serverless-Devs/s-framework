@@ -1,6 +1,6 @@
 {
   "name": "@serverless-devs/s-framework",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "Serverless Devs Tool Framework Component For Alibaba Cloud",
   "keywords": [
     "Serverless",
@@ -8,7 +8,7 @@
     "Serverless-Devs",
     "Serverless-Tool"
   ],
-  "homepage": "https://www.serverlessfans.com",
+  "homepage": "https://www.serverless-devs.com",
   "author": "Serverless-Devs",
   "contributors": [
     "Shoushuai Wang",
