@@ -1,4 +1,6 @@
-import { Component } from '@serverless-devs/s-core';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import { Component, Log } from '@serverless-devs/s-core';
 import { DEFAULT } from './static';
 const fse = require('fs-extra');
 const path = require('path');
@@ -51,7 +53,9 @@ class Framework extends Component {
 
   async deploy(inputs: InputsContext ) {
 
-    console.log('Start deploying framework ...');
+    const logger = new Log()
+
+    logger.log('Start deploying framework ...');
 
     // 导入FC组件
     const fc = await this.load('fc', 'Component');
@@ -91,7 +95,7 @@ class Framework extends Component {
     Function.Triggers = this.getTriggers(inputs.Properties.Domains, Function.Triggers, fc.state.Domains, needNewDomains);
     Function.CodeUri = inputs.Properties.CodeUri || './';
 
-    console.log('Bootstrap processing ...');
+    logger.log('Bootstrap processing ...');
     if(!(inputs.Bootstrap.NoBootstrap && inputs.Bootstrap.NoBootstrap === true)){
       await this.handlerStartConfig(Function.CodeUri, inputs.Bootstrap.Content, inputs.Bootstrap.IsConfig);
     }
@@ -147,7 +151,7 @@ class Framework extends Component {
       output['Domains'] = outputDomains.length === 1 ? outputDomains[0] : outputDomains;
     }
 
-    console.log('Framework deployment completed.');
+    logger.log('Framework deployment completed.');
 
     return output;
   }
