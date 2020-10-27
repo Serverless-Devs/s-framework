@@ -175,7 +175,7 @@ class Framework extends Component {
       Credentials,
       Properties: Properties.Detail,
       State: fc.state,
-      Args: {}
+      Args: ''
     });
 
     fc.state = {};
